@@ -46,6 +46,14 @@
           ...
         }:
         {
+          packages = rec {
+            default = spcs-spec-validator;
+            spcs-spec-validator = import ./packages/spcs-nickel-spec-validator/package.nix {
+              inherit (pkgs) writeShellApplication nickel yamllint;
+            };
+          };
+
+          # Development stuff
           treefmt = {
             programs = {
               deadnix = {
@@ -105,6 +113,7 @@
               treefmt.enable = true;
               deadnix.enable = true;
               statix.enable = true;
+              shellcheck.enable = true;
               # yamllint.enable = true;
               markdownlint.enable = true;
             };
@@ -126,10 +135,6 @@
             packages = builtins.attrValues { inherit (pkgs) nickel nls; };
           };
         };
-      flake = {
-        # The usual flake attributes can be defined here, including system-
-        # agnostic ones like nixosModule and system-enumerating ones, although
-        # those are more easily expressed in perSystem.
-      };
+      flake = { };
     };
 }

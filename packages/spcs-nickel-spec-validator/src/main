@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# TODO: --quiet
+# TODO: pass nickel flags
+# TODO: pass yamllint flags
+#
+export NICKEL_IMPORT_PATH="/Users/vtimofeenko/code/public/spcs-nickel-spec-validator/packages/spcs-nickel-spec-validator/src"
+
+# TOOD: mac does not have realpath :(
+FILENAME=$(realpath "$1")
+
+cat <<EOF | nickel export -f yaml
+let spec = import "$FILENAME" in
+let schema = import "schemas/main.ncl" in
+spec | schema
+EOF
+
