@@ -2,3 +2,7 @@ spec:
   containers:
     - name: helloworld
       image: /spcs_db/public/images/helloworld:latest
+  logExporters:
+    eventTableConfig:
+      logLevel: INFO
+

@@ -8,7 +8,7 @@ SPCS schema validator using nickel.
   - [ ] containers
   - [x] endpoints
   - [ ] volumes
-  - [ ] logExporters
+  - [x] logExporters
 - [ ] decide about yamllint
 - [ ] add nix-based tests
 - [ ] add GH action to run the test
