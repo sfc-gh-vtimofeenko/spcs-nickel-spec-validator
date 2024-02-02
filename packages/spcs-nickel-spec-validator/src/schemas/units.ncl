@@ -1,8 +1,8 @@
-fun label value =>
+fun wrappedContract label value =>
   let units = ["Ki", "Mi", "Gi", "k", "M", "G", "m"]
   in
   if std.is_number value then
-    value | std.number.PosNat
+    value | wrappedContract
   else if (std.array.elem (std.string.replace_regex "^\\d+" "" value) units) then
     value
   else
