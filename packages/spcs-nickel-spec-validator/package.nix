@@ -1,15 +1,8 @@
-{
-  writeShellApplication,
-  nickel,
-  yamllint,
-}:
+{ writeShellApplication, nickel }:
 writeShellApplication {
   name = "spcs-spec-validator";
 
-  runtimeInputs = [
-    nickel
-    yamllint
-  ];
+  runtimeInputs = [ nickel ];
 
   text = builtins.readFile ./src/main;
 

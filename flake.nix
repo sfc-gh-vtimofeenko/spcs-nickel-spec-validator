@@ -49,7 +49,7 @@
           packages = rec {
             default = spcs-spec-validator;
             spcs-spec-validator = import ./packages/spcs-nickel-spec-validator/package.nix {
-              inherit (pkgs) writeShellApplication nickel yamllint;
+              inherit (pkgs) writeShellApplication nickel;
             };
           };
 
@@ -114,7 +114,6 @@
               deadnix.enable = true;
               statix.enable = true;
               shellcheck.enable = true;
-              # yamllint.enable = true;
               markdownlint.enable = true;
             };
             settings = {
