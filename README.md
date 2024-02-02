@@ -4,8 +4,8 @@ SPCS schema validator using nickel.
 
 - [x] base schema
 - [x] base validating script
-- [ ] schemas
-  - [ ] containers
+- [x] schemas
+  - [x] containers
   - [x] endpoints
   - [x] volumes
   - [x] logExporters
