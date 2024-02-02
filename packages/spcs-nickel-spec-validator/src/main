@@ -3,7 +3,7 @@
 # TODO: --quiet
 # TODO: pass nickel flags
 #
-export NICKEL_IMPORT_PATH="/Users/vtimofeenko/code/public/spcs-nickel-spec-validator/packages/spcs-nickel-spec-validator/src"
+export NICKEL_IMPORT_PATH="/Users/vtimofeenko/code/public/spcs-nickel-spec-validator/packages/spcs-nickel-spec-validator/src:${NICKEL_IMPORT_PATH}"
 
 # TOOD: mac does not have realpath :(
 FILENAME=$(realpath "$1")
