@@ -1,5 +1,7 @@
 let impl : Bool -> Bool -> Bool = fun A B => !A || B in
 
+let Unit = import "./units.ncl" in
+
 let VolumeSchema =
   let Source = fun label value =>
     # Validates that "value" is either 'local', 'memory' or '@<stagename>'
@@ -25,7 +27,7 @@ let VolumeSchema =
         source | Source,
         uid | std.number.Nat | optional,
         gid | std.number.Nat | optional,
-        size | std.number.PosNat | optional # TODO: units
+        size | Unit | optional
       },
       MemoryIFFSize
     ]
