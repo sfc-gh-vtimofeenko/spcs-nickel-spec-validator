@@ -16,6 +16,7 @@ let SpecSchema = {
     | doc "https://docs.snowflake.com/en/developer-guide/snowpark-container-services/specification-reference#spec-logexporters-field-optional"
     | optional
 }
+# TODO: check that 'containers.<*>.volumeMounts.name' is one of 'volumes.<*>.name'
 in
 {
   spec | SpecSchema
