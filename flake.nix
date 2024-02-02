@@ -49,7 +49,12 @@
           packages = rec {
             default = spcs-spec-validator;
             spcs-spec-validator = import ./packages/spcs-nickel-spec-validator/package.nix {
-              inherit (pkgs) writeShellApplication nickel;
+              inherit (pkgs)
+                writeShellApplication
+                nickel
+                symlinkJoin
+                stdenv
+                ;
             };
           };
 
