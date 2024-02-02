@@ -6,8 +6,15 @@
 DIRNAME=$(dirname "$0")
 export NICKEL_IMPORT_PATH="${DIRNAME}:${NICKEL_IMPORT_PATH:-}"
 
-# TOOD: mac does not have realpath :(
-FILENAME=$(realpath "$1")
+# TODO: mac does not have realpath :(
+
+if [ -z ${1+x} ]; then
+    echo "Please provide a spec file to check"
+    exit 1
+else
+    FILENAME=$(realpath "${1}")
+    # TODO: allow reading stdin
+fi
 
 cat <<EOF | nickel export -f yaml
 let spec = import "$FILENAME" in
