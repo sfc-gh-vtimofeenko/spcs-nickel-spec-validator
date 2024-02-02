@@ -27,7 +27,7 @@ let VolumeSchema =
         source | Source,
         uid | std.number.Nat | optional,
         gid | std.number.Nat | optional,
-        size | Unit | optional
+        size | (Unit std.number.PosNat) | optional
       },
       MemoryIFFSize
     ]
