@@ -1,3 +1,7 @@
+This is a WIP project for a toy validator of [Snowpark container services
+spec](https://docs.snowflake.com/en/developer-guide/snowpark-container-services/specification-reference)
+written in [nickel](https://nickel-lang.org/)
+
 SPCS schema validator using nickel.
 
 # TODO
